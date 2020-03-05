@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:galery/api/UnsplashService.dart';
 import 'package:galery/model/Photo.dart';
 import 'package:galery/view/PhotoScreen.dart';
@@ -20,7 +19,14 @@ class PhotoListState extends State<PhotoList> {
   @override
   void initState() {
     super.initState();
-    UnsplashService().loadPhotos().then((List<Photo> value) => _setData(value));
+    try {
+      UnsplashService().loadPhotos().then((List<Photo> value) =>
+          _setData(value));
+    } catch (e) {
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text(e.toString()),
+      ));
+    }
   }
 
   @override

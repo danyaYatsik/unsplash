@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:galery/view/PhotoList.dart';
 
 class ListScreen extends StatelessWidget {

@@ -18,9 +18,6 @@ class MyApp extends StatelessWidget {
         var path = routeSettings.name.substring(1, routeSettings.name.length);
         var destination = "/" + path.substring(0, path.indexOf("/"));
         var param = path.substring(path.indexOf("/") + 1, path.length);
-        print(path);
-        print(destination);
-        print(param);
 
         if (destination == PhotoScreen.ROUTE) {
           return new MaterialPageRoute(
